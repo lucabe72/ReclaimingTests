@@ -1,0 +1,61 @@
+{
+	"resources" : 0,
+	"tasks" : {
+		"task1" : {
+			"bcet" : 3835,
+			"wcet" : 4794,
+			"runtime" : 3196,
+			"period" : 30000,
+			"deadline" : 30000
+		},
+		"task2" : {
+			"bcet" : 6138,
+			"wcet" : 7672,
+			"runtime" : 5115,
+			"period" : 10000,
+			"deadline" : 10000
+		},
+		"task3" : {
+			"bcet" : 7610,
+			"wcet" : 9513,
+			"runtime" : 6342,
+			"period" : 60000,
+			"deadline" : 60000
+		},
+		"task4" : {
+			"bcet" : 2449,
+			"wcet" : 3061,
+			"runtime" : 2041,
+			"period" : 10000,
+			"deadline" : 10000
+		},
+		"task5" : {
+			"bcet" : 3811,
+			"wcet" : 4764,
+			"runtime" : 3176,
+			"period" : 10000,
+			"deadline" : 10000
+		},
+		"task6" : {
+			"bcet" : 8275,
+			"wcet" : 10344,
+			"runtime" : 6896,
+			"period" : 40000,
+			"deadline" : 40000
+		},
+		"task7" : {
+			"bcet" : 48138,
+			"wcet" : 60172,
+			"runtime" : 40115,
+			"period" : 70000,
+			"deadline" : 70000
+		},
+	},
+	"global" : {
+		"default_policy" : "SCHED_DEADLINE",
+		"duration" : 10,
+		"logdir" : "/tmp/",
+		"log_basename" : "rt-app",
+		"lock_pages" : true
+	}
+},
