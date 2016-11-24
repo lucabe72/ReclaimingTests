@@ -9,6 +9,7 @@ cd schedtool-dl
 make
 cd ..
 cd rt-app
+./autogen.sh
 ./configure --with-deadline --with-json
 make
 cd ..
