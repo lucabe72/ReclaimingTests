@@ -7,7 +7,7 @@ doit() {
   for L in $LAX
    do
 #  ((L < 0)) && echo $L
-    ((L < 0)) && CNT=$((CNT + 1))
+   [ $L -lt 0 ] && CNT=$((CNT + 1))
    done
   echo -n "Miss: $CNT / $LINES = "
   echo $((CNT * 10000 / LINES))
