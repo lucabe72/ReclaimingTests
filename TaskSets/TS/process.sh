@@ -32,7 +32,7 @@ mkdir $1/Results
 for F in $FILES
  do
   do_process $F Results
-  bash parse.sh Results/$(basename $F) >> res.txt
+  sh parse.sh Results/$(basename $F) >> res.txt
  done
 mv $1/*.json $1/JSON
 
