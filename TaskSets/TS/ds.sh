@@ -3,13 +3,11 @@ GAMMAS="0.9 1.0 1.1 1.2 1.3 1.4 1.5"
 
 for G in $GAMMAS
  do
-  rm new-gamma-$G.txt
+  echo "Gamma=$G"
   for A in $ALPHAS
    do
-    SS0=$(sh dosum.sh New-Sequential/Gamma-$G/R-0/res-$A.txt | cut -d ' ' -f 5)
-    SS1=$(sh dosum.sh New-Sequential/Gamma-$G/R-1/res-$A.txt | cut -d ' ' -f 5)
-    SP0=$(sh dosum.sh Parallel/Gamma-$G/R-0/res-$A.txt | cut -d ' ' -f 5)
-    SP1=$(sh dosum.sh Parallel/Gamma-$G/R-1/res-$A.txt | cut -d ' ' -f 5)
-    echo "$A $SS0 $SS1 $SP0 $SP1" >> new-gamma-$G.txt
+    R0=$(sh dosum.sh Gamma-$G/R-0/res-$A.txt)
+    R1=$(sh dosum.sh Gamma-$G/R-1/res-$A.txt)
+    echo "$A $R0 $R1" > /dev/kmsg
    done
  done

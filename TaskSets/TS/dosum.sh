@@ -1,5 +1,15 @@
-NUM=$(cut -d ' ' -f 2 $1  | paste -sd+ | bc)
-DEN=$(cut -d ' ' -f 4 $1  | paste -sd+ | bc)
-RES=$(echo "scale=5; $NUM / $DEN" | bc)
+NUMS=$(cut -d ' ' -f 2 $1)
+DENS=$(cut -d ' ' -f 4 $1)
+NUM=0
+DEN=0
 
-echo $NUM / $DEN = $RES
+for N in $NUMS
+ do
+  NUM=$((NUM+N))
+ done
+for N in $DENS
+ do
+  DEN=$((DEN+N))
+ done
+
+echo $NUM / $DEN
