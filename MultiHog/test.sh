@@ -2,6 +2,6 @@ IDS=$(seq 1 11)
 
 for D in $IDS
  do
-  sudo ./d &
+  sudo ./d 2 &
  done
-sleep 2; sudo killall d
+pidstat 1 10; sudo killall d
