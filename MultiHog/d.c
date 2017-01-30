@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/syscall.h>
 #include <linux/types.h>
 #include <linux/sched.h>
@@ -36,7 +37,7 @@ int main (int argc, char **argv)
 {
 	int i;
 	int ret;
-	int f;
+	int f = 0;
 	unsigned int flags = 0;
 	struct timespec tp;
 	struct sched_attr attr;
@@ -44,6 +45,7 @@ int main (int argc, char **argv)
 	if (argc > 1) {
 		f = atoi(argv[1]);
 	}
+	memset(&attr, 0, sizeof(attr));
 	attr.size = sizeof(attr);
 	attr.sched_flags = /*SCHED_FLAG_RECLAIM*/ f;
 	attr.sched_nice = 0;
