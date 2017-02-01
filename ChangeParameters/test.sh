@@ -3,9 +3,11 @@ do_test() {
   P=$!
   echo PID: $P
   sudo ./chdl/chdl $P 50000 100000
-  sleep 10 
+  #pidstat -p $P 1 5
+  top -b -d 1 -n 5 | grep hog
   sudo ./chdl/chdl $P 40000 100000
-  sleep 10 
+  #pidstat -p $P 1 5
+  top -b -d 1 -n 5 | grep hog
   kill $P
 }
 
