@@ -1,6 +1,6 @@
 CFLAGS=-Wall -Wextra -pedantic -std=c11
 
-all: d 
+all: dlhog
 
 clean:
-	rm -f *.o d
+	rm -f *.o dlhog
